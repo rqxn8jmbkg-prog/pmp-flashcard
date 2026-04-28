@@ -3,53 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Flashcard App</title>
+    <title>PMP Flashcards 🚀</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>English Flashcards 🚀</h1>
+        <h1>PMP Flashcards 🚀</h1>
         
+        <div class="stats">
+            Đang lưu: <span id="total-count">0</span> thuật ngữ
+        </div>
+
         <div class="flashcard-container">
             <div class="flashcard" id="card">
-                <div class="front">
-                    <p id="word-front">Nhấn "Thêm từ" để bắt đầu</p>
-                </div>
-                <div class="back">
-                    <p id="meaning-back">Nghĩa của từ sẽ hiện ở đây</p>
-                </div>
+                <div class="front"><p id="word-front">Đang tải...</p></div>
+                <div class="back"><p id="meaning-back">...</p></div>
             </div>
         </div>
 
         <div class="controls">
-            <button class="btn-next" onclick="nextCard()">Từ tiếp theo ➡️</button>
-            <button class="btn-clear" onclick="clearCurrentWord()" style="background-color: #dc3545; margin-left: 10px;">
-                Đã thuộc (Xóa) ✅
-            </button>
+            <button class="btn-next" onclick="nextCard()">Tiếp theo ➡️</button>
+            <button class="btn-clear" onclick="clearCurrentWord()">Đã thuộc ✅</button>
         </div>
 
         <div class="divider"></div>
 
         <div class="input-section">
-            <h3>Thêm từ mới</h3>
-            <div class="form-group">
-                <input type="text" id="new-word" placeholder="Nhập từ tiếng Anh..." onblur="autoTranslate()">
-            </div>
-            <div id="loading" style="display:none; font-size: 12px; color: #007bff; margin-bottom: 5px;">
-                🤖 AI đang tìm nghĩa...
-            </div>
-            <div class="form-group">
-                <input type="text" id="new-meaning" placeholder="Nghĩa tiếng Việt">
-            </div>
+            <h3>Thêm thuật ngữ PMP</h3>
+            <input type="text" id="new-word" placeholder="Ví dụ: Critical Path..." onblur="autoTranslate()">
+            <div id="loading" style="display:none; font-size: 12px; color: #007bff;">🤖 Đang tra từ điển PMP...</div>
+            <input type="text" id="new-meaning" placeholder="Nghĩa chuẩn PMP">
             <button class="btn-add" onclick="addWord()">Lưu vào bộ nhớ</button>
         </div>
-
-        <p style="font-size: 12px; color: #888; margin-top: 20px;">
-            Mẹo: Click vào thẻ để xem nghĩa!
-        </p>
     </div>
-    
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
