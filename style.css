@@ -1,27 +1,20 @@
-body { font-family: sans-serif; display: flex; justify-content: center; background: #f4f4f9; }
-.container { width: 350px; text-align: center; margin-top: 50px; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; background: #eceff1; color: #333; }
+.container { width: 95%; max-width: 400px; text-align: center; margin-top: 30px; }
 
-/* Hiệu ứng 3D Flashcard */
-.flashcard-container { perspective: 1000px; margin-bottom: 20px; cursor: pointer; }
-.flashcard {
-    width: 100%; height: 200px;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+/* Stats Style */
+.stats { background: #007bff; color: white; padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 15px; font-size: 14px; font-weight: bold; }
 
-/* Khi thẻ có class .flipped thì xoay 180 độ */
+.flashcard-container { perspective: 1000px; margin-bottom: 20px; cursor: pointer; height: 220px; }
+.flashcard { width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-radius: 15px; }
 .flashcard.flipped { transform: rotateY(180deg); }
+.front, .back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 15px; background: white; padding: 20px; box-sizing: border-box; font-size: 22px; font-weight: bold; }
+.back { background: #e8f5e9; transform: rotateY(180deg); color: #2e7d32; font-size: 18px; font-weight: normal; }
 
-.front, .back {
-    position: absolute; width: 100%; height: 100%;
-    backface-visibility: hidden; /* Giấu mặt sau khi xoay */
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px; border-radius: 15px; background: white;
-}
-
-.back { background: #e8f5e9; transform: rotateY(180deg); color: #2e7d32; padding: 10px; }
-
-.input-section input { margin: 5px 0; padding: 8px; width: 90%; }
-button { padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; margin-top: 10px; }
+.controls { display: flex; gap: 10px; justify-content: center; }
+button { padding: 12px; cursor: pointer; border: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+.btn-next { background: #2ecc71; color: white; flex: 2; }
+.btn-clear { background: #e74c3c; color: white; flex: 1; }
+.btn-add { background: #007bff; color: white; width: 100%; margin-top: 10px; }
+.input-section { background: white; padding: 20px; border-radius: 15px; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+.divider { margin: 20px 0; border-top: 1px solid #ccc; }
