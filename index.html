@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Flashcard App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>English Flashcards 🚀</h1>
+        
+        <div class="flashcard-container">
+            <div class="flashcard" id="card">
+                <div class="front">
+                    <p id="word-front">Nhấn "Thêm từ" để bắt đầu</p>
+                </div>
+                <div class="back">
+                    <p id="meaning-back">Nghĩa của từ sẽ hiện ở đây</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn-next" onclick="nextCard()">Từ tiếp theo ➡️</button>
+            <button class="btn-clear" onclick="clearCurrentWord()" style="background-color: #dc3545; margin-left: 10px;">
+                Đã thuộc (Xóa) ✅
+            </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="input-section">
+            <h3>Thêm từ mới</h3>
+            <div class="form-group">
+                <input type="text" id="new-word" placeholder="Nhập từ tiếng Anh..." onblur="autoTranslate()">
+            </div>
+            <div id="loading" style="display:none; font-size: 12px; color: #007bff; margin-bottom: 5px;">
+                🤖 AI đang tìm nghĩa...
+            </div>
+            <div class="form-group">
+                <input type="text" id="new-meaning" placeholder="Nghĩa tiếng Việt">
+            </div>
+            <button class="btn-add" onclick="addWord()">Lưu vào bộ nhớ</button>
+        </div>
+
+        <p style="font-size: 12px; color: #888; margin-top: 20px;">
+            Mẹo: Click vào thẻ để xem nghĩa!
+        </p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
